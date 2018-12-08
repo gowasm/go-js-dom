@@ -356,8 +356,8 @@ func (tl *TokenList) Remove(token string) {
 	tl.dtl.Call("remove", token)
 }
 
-func (tl *TokenList) Replace(oldToken, newToken string) {
-	tl.dtl.Call("replace", oldToken, newToken)
+func (tl *TokenList) Replace(oldToken, newToken string) bool{
+	return tl.dtl.Call("replace", oldToken, newToken).Bool()
 }
 
 func (tl *TokenList) Toggle(token string) {
